@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>利用hugo在gitee、github搭建静态博客 | 嚣张协奏曲-blog</title>
+
+    
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+<meta name="author" content="嚣张协奏曲" />
+<meta name="description" content="突然有一天，那个人想起了许久不光顾的github。看着空荡荡的仓库，指尖划过磨砂的键盘，眼神闪烁，一个念头就此产生。
+" />
+
+
+
+<meta name="generator" content="Hugo 0.79.1" />
+
+<link rel="canonical" href="https://xzxzq.github.io/posts/buildBlogByHugo/" />
+
+
+<meta property="og:title" content="利用hugo在gitee、github搭建静态博客" />
+<meta property="og:description" content="突然有一天，那个人想起了许久不光顾的github。看着空荡荡的仓库，指尖划过磨砂的键盘，眼神闪烁，一个念头就此产生。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xzxzq.github.io/posts/buildBlogByHugo/" />
+<meta property="article:published_time" content="2020-12-25T16:36:20+08:00" />
+<meta property="article:modified_time" content="2020-12-25T16:36:20+08:00" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="利用hugo在gitee、github搭建静态博客"/>
+<meta name="twitter:description" content="突然有一天，那个人想起了许久不光顾的github。看着空荡荡的仓库，指尖划过磨砂的键盘，眼神闪烁，一个念头就此产生。"/>
+
+
+<link rel="stylesheet" href="/css/semantic.min.css" />
+<link rel="stylesheet" href="/css/icomoon.css" />
+<link rel="stylesheet" href="/css/OverlayScrollbars.min.css" />
+<link rel="stylesheet" href="/css/github-markdown.css" />
+<link rel="stylesheet" href="/css/site.css" />
+
+<style>
+  a:hover {
+    text-decoration: underline; 
+  }
+
+  
+  a {
+    color: seagreen !important;
+  }
+  
+
+  
+  .inverted a,
+  .inverted a:hover {
+     color: darkseagreen !important;
+  }
+  
+
+  
+  body.default {
+    
+    background-color: glay;
+    
+
+    
+    background-image: url(/me/city_night.jpg);
+    
+  }
+  
+
+  
+</style>
+
+    
+
+
+  
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/gruvbox-light.min.css" />
+  
+
+
+
+
+
+  </head>
+
+  <body class="default">
+    
+<nav class="ui secondary inverted menu dream-menu">
+
+  <div class="item">
+    <i class="large link bullseye icon dream-flip-toggle" title="翻转！"></i>
+  </div>
+  <div class="item">
+    <i class="large link home icon" title="首页" onclick="window.location.href = 'https:\/\/xzxzq.github.io\/'"></i>
+  </div>
+  <div class="item">
+    <i class="large link icon theme-switch" onclick="themeSwitch()"></i>
+  </div>
+  
+  <div class="item">
+    <i class="large link search icon" onclick="toggleSearch()"></i>
+  </div>
+  
+</nav>
+
+    <div class="flip-container">
+      <div class="flipper">
+        <section class="front">
+          <div class="dream-max-width">
+            
+<div class="ui centered relaxed grid dream-grid">
+  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
+    
+    <section class="ui top attached segment">
+      <header>
+        <h1 class="ui large header">
+          利用hugo在gitee、github搭建静态博客
+          <div class="sub header">
+            @
+            
+              
+                嚣张协奏曲
+              
+            
+
+            | 
+                星期五，十二月 25 日，2020 年
+              
+
+            | 2 分钟阅读
+
+            | 更新于
+              
+                星期五，十二月 25 日，2020 年
+              
+          </div>
+        </h1>
+      </header>
+
+      <article class="main"><p>突然有一天，那个人想起了许久不光顾的github。看着空荡荡的仓库，指尖划过磨砂的键盘，眼神闪烁，一个念头就此产生。</p>
+<h2 id="1需要什么">1、需要什么</h2>
+<ul>
+<li>windows 10系统</li>
+<li>github和gitee账号</li>
+<li>git环境</li>
+<li>合格的浏览器</li>
+<li>一双手</li>
+</ul>
+<h2 id="2hugo">2、HUGO</h2>
+<h3 id="21hugo">2.1、hugo</h3>
+<p>一个制作静态网页的工具</p>
+<h3 id="22下载">2.2、下载</h3>
+<p>可以直接在GitHub上下载，在我创建这个文章的时候最新版如下：</p>
+<p><a href="https://github.com/gohugoio/hugo/releases/download/v0.79.1/hugo_0.79.1_Windows-64bit.zip">hugo 0.79.1 win64版本下载</a></p>
+<p>也可直接访问官方仓库<a href="https://github.com/gohugoio/hugo">hugo</a></p>
+<h3 id="23安装">2.3、安装</h3>
+<p>下载好之后，选择一个文件夹解压好。</p>
+<p>然后将可执行文件所在的目录地址加入系统环境变量path。</p>
+<p>目的是为了在命令行直接使用hugo。</p>
+<h3 id="23使用过程">2.3、使用过程</h3>
+<p>选一个风水比较好的文件夹，打开命令行</p>
+<ul>
+<li>
+<p>创建一个站点</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">hugo new site [站点的存放点]
+</code></pre></div></li>
+<li>
+<p>创建一个文章文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">hugo new [目录]/[文章名].md
+</code></pre></div><p>hugo生成文件的目录默认是content，命令行的<code>[目录]</code>会在content文件夹下创建，可以通过配置文件修改默认值</p>
+</li>
+<li>
+<p>本地服务调式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">hugo server
+</code></pre></div><p>以默认的配置启动本地调式。运行命令后文件会启动调试，可以在http://localhost:1313/中看到自己创建的页面</p>
+</li>
+<li>
+<p>生成静态页面</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">hugo
+</code></pre></div><p>以默认配置文件生成静态页面，默认在public文件夹可以看到生成的结果</p>
+</li>
+</ul>
+<p>hugo的使用非常简单，只要将配置文件设置妥当，后面的使用流程就仅仅是创建文件、调试文件、转静态文件、发布到远程仓库</p>
+<h2 id="3发布到github和gitee">3、发布到github和gitee</h2>
+<p>//TODO</p>
+<h2 id="4主题">4、主题</h2>
+<p>//TODO</p>
+<h2 id="5评论">5、评论</h2>
+<p>//TODO</p>
+<h2 id="6其他">6、其他</h2>
+<p>//TODO</p></article>
+    </section>
+
+    <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
+      
+        
+          <a class="ui label" href="/tags/github" title="github">github</a>
+        
+          <a class="ui label" href="/tags/gitee" title="gitee">gitee</a>
+        
+          <a class="ui label" href="/tags/hugo" title="hugo">hugo</a>
+        
+      
+      <div
+        class="ui label"
+        style="float: right; cursor: pointer;"
+        onclick="savePostAsImg()">
+        <i class="save icon"></i>保存为图片
+      </div>
+    </footer>
+
+    
+
+    
+    
+    
+      <div class="ui segment utterances-comments" data-html2canvas-ignore>
+        <script src="https://utteranc.es/client.js"
+          repo="xzxzq/SocialComments"
+          issue-term="og:title"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    
+
+    
+
+  </div>
+  <aside class="sixteen wide mobile sixteen wide tablet four wide computer column dream-single-aside">
+    
+    
+      <div class="ui segment toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1需要什么">1、需要什么</a></li>
+    <li><a href="#2hugo">2、HUGO</a>
+      <ul>
+        <li><a href="#21hugo">2.1、hugo</a></li>
+        <li><a href="#22下载">2.2、下载</a></li>
+        <li><a href="#23安装">2.3、安装</a></li>
+        <li><a href="#23使用过程">2.3、使用过程</a></li>
+      </ul>
+    </li>
+    <li><a href="#3发布到github和gitee">3、发布到github和gitee</a></li>
+    <li><a href="#4主题">4、主题</a></li>
+    <li><a href="#5评论">5、评论</a></li>
+    <li><a href="#6其他">6、其他</a></li>
+  </ul>
+</nav>
+      </div>
+    
+
+    <article class="dream-header">
+  <section class="ui top attached center aligned segment">
+    <div class="ui small circular image">
+      
+        <img src="/img/head.jpg">
+      
+    </div>
+
+    
+    <div class="ui medium header">
+    
+      嚣张协奏曲 的博客
+      <div class="sub header" style="margin-top: 0.5rem;">百无禁忌</div>
+    
+    </div>
+    
+
+    <div class="ui horizontal list">
+      
+      <a class="item" href="/posts">
+        <i class="archive icon" title="归档"></i>
+      </a>
+      
+      <a class="item" href="/tags">
+        <i class="tags icon" title="所有标签"></i>
+      </a>
+      <a class="item" href="/categories">
+        <i class="th list icon" title="所有分类"></i>
+      </a>
+    </div>
+  </section>
+
+  
+  <section class="ui attached center aligned segment dream-tags">
+    
+      
+      
+      <a class="ui label" href="/tags/gitee/" title="Gitee">
+        Gitee
+      </a>
+    
+      
+      
+      <a class="ui label" href="/tags/github/" title="Github">
+        Github
+      </a>
+    
+      
+      
+      <a class="ui label" href="/tags/hugo/" title="Hugo">
+        Hugo
+      </a>
+    
+  </section>
+  
+
+  
+  <section class="ui attached segment dream-categories">
+    <div class="ui accordion">
+      
+      
+      
+      
+      
+
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            
+            
+            <a class="item" href="/categories/%E6%95%99%E7%A8%8B/" title="教程">
+              教程
+            </a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a class="item" href="/posts/buildBlogByHugo/">利用hugo在gitee、github搭建静态博客</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+
+      
+    </div>
+  </section>
+  
+
+  <section class="ui attached segment header-socials">
+    <nav class="ui secondary menu dream-menu dream-socials">
+  
+  
+    <div class="item">
+      <a href="mailto:alonealive@foxmail.com">
+        <i class=" mail icon" title="Email"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class="item">
+      <a href="https://github.com/https://github.com/xzxzq" target="_blank">
+        <i class=" github icon" title="GitHub"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+</nav>
+
+  </section>
+
+  <section class="ui bottom attached center aligned segment">
+    
+      <p>© 2020 嚣张协奏曲-blog</p>
+    
+
+    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+    
+  </section>
+</article>
+
+  </aside>
+</div>
+
+          </div>
+        </section>
+        <section class="back">
+          <div class="dream-max-width">
+            <div class="ui centered relaxed grid dream-grid dream-back">
+  
+  
+  
+    <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+      <article>
+        <div class="ui top attached segment">
+          <h3 class="ui header">关于我</h3>
+        </div>
+        <div class="ui bottom attached segment markdown-body">
+          <p>暂时没什么想好说什么，以后想好了再说</p>
+<blockquote>
+<p>​	臣亮言：先帝创业未半而中道崩殂(cú)，今天下三分，益州疲(pí)弊，此诚危急存亡之秋也。然侍卫之臣不懈(xiè)于内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗(yí)德，恢弘志士之气，不宜妄自菲薄，引喻失义，以塞(sè)忠谏之路也。</p>
+<p>​	宫中府中，俱为一体，陟(zhì )罚臧(zāng)否(pǐ)，不宜异同。若有作奸犯科及为忠善者，宜付有司论其刑赏，以昭陛下平明之理，不宜偏私，使内外异法也。</p>
+<p>​	侍中、侍郎郭攸(yōu)之、费祎(yī)、董允等，此皆良实，志虑忠纯，是以先帝简拔以遗(wèi)陛下。愚以为宫中之事，事无大小，悉以咨之，然后施行，必能裨(bì)补阙漏，有所广益。</p>
+<p>​	将军向宠，性行（xíng）淑均，晓畅军事，试用于昔日，先帝称之曰能，是以众议举宠为督。愚以为营中之事，悉以咨之，必能使行(háng )阵和睦，优劣得所。</p>
+<p>​	亲贤臣，远小人，此先汉所以兴隆也;亲小人，远贤臣，此后汉所以倾颓也。先帝在时，每与臣论此事，未尝不叹息痛恨于桓（huán）、灵也。侍中、尚书、长(zhǎng)史、参军，此悉贞良死节之臣，愿陛下亲之信之，则汉室之隆，可计日而待也。</p>
+<p>​	臣本布衣，躬耕于南阳，苟全性命于乱世，不求闻(wén)达于诸侯。先帝不以臣卑（bēi）鄙（bǐ），猥(wěi)自枉屈，三顾臣于草庐之中，咨臣以当世之事，由是感激，遂许先帝以驱驰。后值倾覆，受任于败军之际，奉命于危难之间,尔来二十有(yòu)一年矣! 【“有”是通假字，通“又”，跟在数词后面表示约数。所以读yòu】</p>
+<p>​	先帝知臣谨慎，故临崩寄臣以大事也。受命以来，夙(sù)夜忧叹，恐托付不效，以伤先帝之明，故五月渡（dù）泸，深入不毛。今南方已定，兵甲已足，当奖率三军，北定中原，庶(shù)竭驽(nú)钝，攘(rǎng)除奸凶，兴复汉室，还于旧都。此臣所以报先帝而忠陛下之职分也。至于斟酌损益，进尽忠言，则攸之、祎、允之任也。</p>
+<p>​	愿陛下托臣以讨贼兴复之效，不效,则治臣之罪，以告先帝之灵。若无兴德之言，则责攸之、祎、允等之慢，以彰其咎(jiù)。陛下亦宜自谋，以咨诹(zōu)善道，察纳雅言，深追先帝遗诏。臣不胜受恩感激!</p>
+<p>​	今当远离，临表涕零，不知所云。</p>
+</blockquote>
+
+        </div>
+      </article>
+    </section>
+  
+
+  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article>
+      <div class="ui top attached segment">
+        <h3 class="ui header">社交链接</h3>
+      </div>
+      <div class="ui bottom attached segment">
+        <nav class="ui secondary menu dream-menu dream-socials">
+  
+  
+    <div class="item">
+      <a href="mailto:alonealive@foxmail.com">
+        <i class="large mail icon" title="Email"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class="item">
+      <a href="https://github.com/https://github.com/xzxzq" target="_blank">
+        <i class="large github icon" title="GitHub"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+</nav>
+
+      </div>
+    </article>
+  </section>
+
+  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    
+  </section>
+
+  
+  
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+  window.backgroundDark =  null 
+  window.backgroundImageDark =  null 
+  window.darkNav =  true 
+  window.hasTwitterEmbed =  null 
+
+  if (window.hasTwitterEmbed) {
+    
+    window.twttr = (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {}
+      if (d.getElementById(id)) return t
+      js = d.createElement(s)
+      js.id = id
+      js.src = 'https://platform.twitter.com/widgets.js'
+      fjs.parentNode.insertBefore(js, fjs)
+
+      t._e = []
+      t.ready = function (f) {
+        t._e.push(f)
+      }
+
+      return t
+    })(document, 'script', 'twitter-wjs')
+  }
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/jquery.overlayScrollbars.min.js"></script>
+<script src="/js/header.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/theme.js"></script>
+
+    
+<script src="/js/html2canvas.min.js"></script>
+<script src="/js/post.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/ocaml.min.js"></script>
+     
+  
+
+  <script>
+  hljs.initHighlightingOnLoad()
+  setHighlightTheme()
+
+  function setHighlightTheme() {
+    var isDark = localStore.getItem('hugo-theme-dream-is-dark')
+    var lightTheme = "gruvbox-light"
+    var darkTheme = "gruvbox-dark"
+    var theme = isDark ? darkTheme : lightTheme
+
+    $('link[data-highlight]').attr('href', 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/' + theme + '.min.css')
+    $('pre').css('background', isDark ? '#333' : '')
+  }
+</script>
+
+
+
+
+
+    
+      <div class="ui inverted segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="搜索" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('https:\/\/xzxzq.github.io\//index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: true,
+      })
+    })
+  })
+</script>
+<script src="/js/search.js"></script>
+
+    
+
+    
+  </body>
+</html>

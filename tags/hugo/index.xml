@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on 嚣张协奏曲-blog</title>
+    <link>https://xzxzq.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on 嚣张协奏曲-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 25 Dec 2020 16:36:20 +0800</lastBuildDate><atom:link href="https://xzxzq.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>利用hugo在gitee、github搭建静态博客</title>
+      <link>https://xzxzq.github.io/posts/buildBlogByHugo/</link>
+      <pubDate>Fri, 25 Dec 2020 16:36:20 +0800</pubDate>
+      
+      <guid>https://xzxzq.github.io/posts/buildBlogByHugo/</guid>
+      <description>&lt;p&gt;突然有一天，那个人想起了许久不光顾的github。看着空荡荡的仓库，指尖划过磨砂的键盘，眼神闪烁，一个念头就此产生。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
