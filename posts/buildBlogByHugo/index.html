@@ -176,9 +176,9 @@
 </li>
 <li>
 <p>测试一下hugo能不能用，在命令行中输入<code>hugo version</code>，出现如下字样就是设置好了</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">❯ hugo version
+<pre><code>❯ hugo version
 Hugo Static Site Generator v0.79.1-EDB9248D windows/amd64 BuildDate: 2020-12-19T15:44:19Z
-</code></pre></div></li>
+</code></pre></li>
 </ul>
 <h2 id="3创建hugo站点">3、创建hugo站点</h2>
 <p>站点也就是hugo的工作目录，生成静态页面的所需要的环境。</p>
@@ -203,9 +203,9 @@ Visit https://gohugo.io/ for quickstart guide and full documentation.
 <h2 id="4安装一个主题">4、安装一个主题</h2>
 <p>在官网的<a href="https://themes.gohugo.io/">主题商城</a>上选择一个主题，下载并解压到站点<code>themes</code>目录下，例如我选择<a href="https://themes.gohugo.io/hugo-theme-stack/">Stack</a>，解压的根目录一定得是&quot;hugo-theme-stack&quot;，否则hugo会找不到主题</p>
 <p>或者通过git命令的方式下载</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">❯ cd .\themes\
+<pre><code>❯ cd .\themes\
 ❯ git clone https://github.com/CaiJimmy/hugo-theme-stack.git hugo-theme-stack
-</code></pre></div><p>打开主题目录，复制archetypes到站点根目录，这里面是主题配套的文章模板文件</p>
+</code></pre><p>打开主题目录，复制archetypes到站点根目录，这里面是主题配套的文章模板文件</p>
 <p><img src="https://gitee.com/xzxzq/img/raw/master/image/stack_theme.png" alt="stack_theme"></p>
 <p>然后打开exampleSite，复制config.yaml到站点根目录，并删掉原来的config.toml文件</p>
 <h2 id="5创建文章">5、创建文章</h2>
@@ -371,7 +371,7 @@ title: XXX的博客
 
     
       <footer class="ui attached segment" data-html2canvas-ignore>
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+        本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
       </footer>
     
 
@@ -460,6 +460,18 @@ title: XXX的博客
     
       
       
+      <a class="ui label" href="/tags/Maven/" title="Maven">
+        Maven
+      </a>
+    
+      
+      
+      <a class="ui label" href="/tags/Tomcat/" title="Tomcat">
+        Tomcat
+      </a>
+    
+      
+      
       <a class="ui label" href="/tags/gitee/" title="Gitee">
         Gitee
       </a>
@@ -541,7 +553,13 @@ title: XXX的博客
             
               <div class="item">
                 <div class="content">
-                  <a class="item" href="/posts/problem_1/">java: 程序包org.springframework.stereotype不存在</a>
+                  <a class="item" href="/posts/lombok_error_12282020/">使用Lombk时出现错误</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a class="item" href="/posts/problem_1/">执行junit单元测试出错</a>
                 </div>
               </div>
             
@@ -672,7 +690,7 @@ title: XXX的博客
   <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
     
       <footer class="ui segment">
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+        本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
       </footer>
     
   </section>

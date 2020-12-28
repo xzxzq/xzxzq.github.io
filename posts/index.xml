@@ -6,15 +6,24 @@
     <description>Recent content in Posts on 嚣张协奏曲-blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;img alt=&#34;知识共享许可协议&#34; style=&#34;border-width:0&#34; src=&#34;https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png&#34; /&gt;&lt;/a&gt;&lt;br /&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
-    <lastBuildDate>Sun, 27 Dec 2020 16:01:28 +0800</lastBuildDate><atom:link href="https://xzxzq.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
+    <lastBuildDate>Mon, 28 Dec 2020 17:37:20 +0800</lastBuildDate><atom:link href="https://xzxzq.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>java: 程序包org.springframework.stereotype不存在</title>
+      <title>使用Lombk时出现错误</title>
+      <link>https://xzxzq.github.io/posts/lombok_error_12282020/</link>
+      <pubDate>Mon, 28 Dec 2020 17:37:20 +0800</pubDate>
+      
+      <guid>https://xzxzq.github.io/posts/lombok_error_12282020/</guid>
+      <description>&lt;p&gt;Unable to process Jar entry [module-info.class] from Jar [jar:file:/D:/Software/Maven/repository/org/projectlombok/lombok/1.18.16/lombok-1.18.16.jar!/] for annotations&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>执行junit单元测试出错</title>
       <link>https://xzxzq.github.io/posts/problem_1/</link>
       <pubDate>Sun, 27 Dec 2020 16:01:28 +0800</pubDate>
       
       <guid>https://xzxzq.github.io/posts/problem_1/</guid>
-      <description>&lt;p&gt;通过IDEA执行的junit单元测试时，出现程序包不存的问题&lt;/p&gt;</description>
+      <description>&lt;p&gt;通过IDEA执行的junit单元测试时，出现程序包不存的问题，提示&amp;quot;java: 程序包org.springframework.stereotype不存在&amp;quot;&lt;/p&gt;</description>
     </item>
     
     <item>
